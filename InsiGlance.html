@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsiGlance | ホーム</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">InsiGlance</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">ホーム</a></li>
+                <li><a href="#">ニュース</a></li>
+                <li><a href="#">カテゴリ</a></li>
+                <li><a href="#">お問い合わせ</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </header>
+    <div class="parallax-container">
+      <div class="background"></div>
+      <div class="text-box">
+        <h1>一瞬で見抜く。その先にある全てを。</h1>
+        <p>一瞬で伝えるためには、深く理解することが必要です。また、一目で感動を伝えるために、情報の本質を捉えたデザインを。私たちは、確かな洞察に基づいたクリエイティブで、心に響く『一目』を提供します。</p>
+      </div>
+    </div>
+    <div class="all-list">
+     <div class="filter-buttons">
+         <button class="filter-button active" data-filter="all">すべて</button>
+         <button class="filter-button" data-filter="blog">ブログ</button>
+         <button class="filter-button" data-filter="global">国内/国外</button>
+         <button class="filter-button" data-filter="economy">経済/株式</button>
+         <button class="filter-button" data-filter="web">Web制作</button>
+         <button class="filter-button" data-filter="manage">マネジメント</button>
+         <button class="filter-button" data-filter="health">ヘルスケア</button>
+     </div>
+     <div class="article-list">
+         <div class="article-card" data-tags="blog,web">
+             <img src="article1.jpg" alt="記事1">
+             <div class="article-content">
+                 <h3>Webデザインの最新トレンド</h3>
+                 <div class="tags">
+                     <span class="tag">ブログ</span>
+                     <span class="tag">Web制作</span>
+                 </div>
+                 <p>2024年のWebデザインのトレンドを詳しく解説します。</p>
+             </div>
+         </div>
+         <div class="article-card" data-tags="global,economy">
+             <img src="article2.jpg" alt="記事2">
+             <div class="article-content">
+                 <h3>経済の未来を占う</h3>
+                 <div class="tags">
+                     <span class="tag">国内/国外</span>
+                     <span class="tag">経済/株式</span>
+                 </div>
+                 <p>世界経済の最新動向と今後の展望を分析。</p>
+             </div>
+         </div>
+         <div class="article-card" data-tags="manage,health">
+             <img src="article3.jpg" alt="記事3">
+             <div class="article-content">
+                 <h3>マネジメントと健康の関係</h3>
+                 <div class="tags">
+                     <span class="tag">マネジメント</span>
+                     <span class="tag">ヘルスケア</span>
+                 </div>
+                 <p>リーダーシップと健康管理の重要性を解説。</p>
+             </div>
+         </div>
+     </div>
+    </div>
+    <div class="subscription">
+     <h1 class="subscription-title">サブスクリプション</h1>
+     <div class="subscription-ex">InsiGlanceではより高度な情報を求める方々に向けたプランをご用意しております。用途に合わせてご利用くださいませ。年間契約の場合は2月分割引となります。</div>
+     <div class="pricing-container">
+      <div class="toggle-container">
+        <span>月額料金</span>
+        <label class="switch">
+          <input type="checkbox" id="toggleSwitch">
+          <span class="slider"></span>
+        </label>
+        <span>年料金</span>
+      </div>
+      <div class="pricing-table">
+        <div class="pricing-plan">
+          <h3>ベーシック</h3>
+          <p class="price" data-monthly="0" data-yearly="0">¥0/月</p>
+          <ul class="plan1">
+            <li>無料記事</li>
+            <li>メルマガ登録</li>
+          </ul>
+        </div>
+        <div class="separator"></div>
+        <div class="pricing-plan">
+          <h3>ビジネス</h3>
+          <p class="price" data-monthly="500" data-yearly="4000">¥500/月</p>
+          <ul class="plan2">
+            <li>無料/有料記事</li>
+            <li>メルマガ登録</li>
+            <li>イベント参加</li>
+            <li>年2回の抽選会参加</li>
+          </ul>
+        </div>
+        <div class="separator"></div>
+        <div class="pricing-plan">
+          <h3>プレミアム</h3>
+          <p class="price" data-monthly="800" data-yearly="8000">¥800/月</p>
+          <ul class="plan3">
+            <li>無料/有料記事</li>
+            <li>メルマガ登録</li>
+            <li>イベント参加</li>
+            <li>年2回の抽選会参加</li>
+            <li>その他</li>
+          </ul>
+        </div>
+      </div>
+     </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

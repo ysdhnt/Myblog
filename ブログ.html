@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0.5人前ジャーナル | ホーム</title>
+  <link rel="stylesheet" href="ブログ.css">
+  <link rel="icon" type="image/png" href="img/ファビコン丸形.png">
+</head>
+<body>
+  <header>
+    <img src="img/ホームアイコン.png" width="200px" height="70px"></a>
+    <nav class="navigation">
+        <h3>Home</h3>
+        <h3>About</h3>
+        <h3>Contact</h3>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main>
+      <div class="tag-buttons">
+        <button onclick="filterPosts('すべて')">すべて</button>
+        <button onclick="filterPosts('趣味')">趣味</button>
+        <button onclick="filterPosts('日常')">日常</button>
+        <button onclick="filterPosts('その他')">その他</button>
+      </div>
+
+      <div class="posts" id="postList">
+        <div class="post" data-tag="趣味">
+          <img src="img/点描の唄ジャケット.jpg" alt="ブログ画像">
+          <div class="post-content">
+            <h2>好きな曲ランキング</h2>
+            <div class="tag">#趣味</div>
+          </div>
+        </div>
+        <div class="post" data-tag="その他">
+          <img src="img/ニュース1.jpeg" alt="ニュース画像">
+          <div class="post-content">
+            <h2>僕って人はこんな人</h2>
+            <div class="tag">#その他</div>
+          </div>
+        </div>
+        <div class="post" data-tag="その他">
+          <img src="img/デザイン1.jpg" alt="記事画像">
+          <div class="post-content">
+            <h2>僕とこのブログについて</h2>
+            <div class="tag">#その他</div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <aside>
+      <h3>プロフィール</h3>
+      <div class="picture">
+       <img src="img/プロフィール用アイコン.png" width="100px" height="100px"></a>
+       <p class="name">マイルドマインド</p>
+      </div>
+      <p>こんにちは！デザイン練習中の大学1年生です。日常や気になったニュース、好きなものを記事にしていきます！<br></p>
+
+      <h3>人気記事</h3>
+      <ul>
+        <li>今後追加予定</li>
+        <li>今後追加予定</li>
+        <li>今後追加予定</li>
+      </ul>
+    </aside>
+  </div>
+
+  <script>
+    function filterPosts(tag) {
+      const posts = document.querySelectorAll('.post');
+      posts.forEach(post => {
+        if (tag === 'すべて' || post.dataset.tag === tag) {
+          post.style.display = 'block';
+        } else {
+          post.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

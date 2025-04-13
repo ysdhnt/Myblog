@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>記事ページ</title>
+</head>
+<body>
+  <h1>はじめまして！</h1>
+  <p>この記事は Node.js で作った閲覧数カウント機能を使っています。</p>
+  <p>閲覧数: <span id="viewCount">読み込み中...</span></p>
+
+  <script>
+    const articleId = 'intro-001';
+
+    // 閲覧カウント＋表示
+    fetch(`/api/view?id=${articleId}`)
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('viewCount').textContent = data.views + ' 回';
+      });
+  </script>
+</body>
+</html>

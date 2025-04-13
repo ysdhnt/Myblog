@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+/* 全体のスタイル */
+body {
+    font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+    background-color: #f7f3ed;
+    margin: 0;
+    padding: 0;
+}
+/* ハンバーガーメニュー */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+.logo {
+    font-size: 50px;
+    font-family: 'Caveat', cursive;
+}
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 5px;
+    background: black;
+}
+/* パララックス効果 */
+.parallax-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://wallpaper.forfun.com/fetch/50/50ea257f8552a4bb02bf47363b9f46aa.jpeg?w=1470&r=0.5625');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+.text-box {
+  position: relative;
+  z-index: 1;
+  background-color: #f7f3ed;
+  padding-top: 40px;
+  padding-left: 80px;
+  padding-right: 80px;
+  max-width: 700px;
+  height: 300px;
+  margin: 0 0 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 8px;
+}/* 記事カード */
+.article-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+.article-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+.article-card:hover {
+    transform: translateY(-5px);
+}
+.article-card img {
+    width: 100%;
+    height: auto;
+}
+/* タグ */
+.tag {
+    background: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+/* フィルタリング時のアニメーション */
+.article-card {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+.article-card.hidden {
+    opacity: 0;
+    display: none;
+}
+.all-list{
+    margin-top: 50px;
+    margin-left: 100px;
+}
+/* コンテナ */
+.pricing-container {
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+}
+/* トグルスイッチ */
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+.switch input {
+  display: none;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #66bb6a;
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+/* 料金テーブル */
+.pricing-table {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+/* 各プラン */
+.pricing-plan {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 280px;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.pricing-plan:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+.pricing-plan h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+.pricing-plan .price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #66bb6a;
+  margin: 15px 0;
+}
+/* 各プランのリスト */
+.pricing-plan ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+.pricing-plan ul li {
+  font-size: 14px;
+  margin: 10px 0;
+  position: relative;
+  padding-left: 25px;
+  color: #555;
+}
+.pricing-plan ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  font-size: 14px;
+  color: #66bb6a;
+}
+/* 仕切り線 */
+.separator {
+  width: 1px;
+  background-color: #ddd;
+  height: auto;
+  align-self: stretch;
+}
+.subscription-title{
+  margin-left: 100px;
+}
+.subscription-ex{
+  margin-left: 100px;
+  width: 1050px;
+}

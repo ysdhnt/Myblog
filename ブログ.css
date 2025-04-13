@@ -1,0 +1,365 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+  background-color: white;
+  color: #333;
+  box-sizing: border-box
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+header {
+  background-color: #f1f6f6;
+  color: black;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+  z-index: 3;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.navigation{
+  display: flex;
+}
+
+.navigation h3{
+  margin-right: 30px;
+}
+
+.container {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+main {
+  flex: 3;
+}
+
+.main1{
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.toc-001 {
+    margin-bottom: 30px;
+    padding: 1em 1em 1em 2em;
+    border: 1px solid #999;
+    background-color: #f7f7f7;
+    color: #333333;
+}
+
+.toc-001 div {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 5px 0;
+}
+
+.toc-001 div::before {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 5px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8 4H21V6H8V4ZM3 3.5H6V6.5H3V3.5ZM3 10.5H6V13.5H3V10.5ZM3 17.5H6V20.5H3V17.5ZM8 11H21V13H8V11ZM8 18H21V20H8V18Z' fill='%23333'%3E%3C/path%3E%3C/svg%3E");
+    content: '';
+}
+
+.toc-001 ol {
+    list-style-type: decimal;
+    margin: 0;
+    padding: 0 1.2em;
+    overflow: hidden;
+}
+
+.toc-001 ol ol {
+    margin-top: 5px;
+}
+
+.toc-001 li {
+    padding: 5px 0;
+}
+
+.toc-001 a {
+    color: #166c9d;
+}
+
+aside {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  height: fit-content;
+  position: sticky;
+  top: 120px;
+  margin-top: 2rem;
+}
+
+aside ul{
+  padding-left: 20px;
+}
+
+.picture{
+  display: flex;
+}
+
+.picture img{
+  border-radius: 50%;
+}
+
+.name{
+  margin-top: 35px;
+  margin-left: 20px;
+}
+
+.tag-buttons {
+  margin-bottom: 1.5rem;
+}
+
+.tag-buttons button {
+  background-color: #e0f0ff;
+  color: #007acc;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+}
+
+.tag-buttons button:hover {
+  background-color: #cde8ff;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.post {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.post:hover {
+  transform: translateY(-5px);
+}
+
+.post img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.post-content {
+  padding: 1rem;
+}
+
+.post-content h2 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+}
+
+.post-content .tag {
+  font-size: 0.8rem;
+  color: #007acc;
+}
+
+.title {
+  font-size: 2.2rem;
+  border-bottom: 3px dashed #ffaaaa;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.mini-title{
+  font-size: 1.4rem;
+  color: #888;
+  margin-top: 0.3rem;
+}
+
+.explain{
+  line-height: 32px;
+}
+
+.profile-comment {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  margin-bottom: 30px;
+}
+
+.profile-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+}
+
+.speech-bubble {
+  position: relative;
+  background: #f5f5f5;
+  padding: 0.8rem 1rem;
+  border-radius: 1rem;
+  color: #333;
+  font-size: 0.95rem;
+  max-width: 650px;
+  line-height: 30px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  z-index: 2;
+}
+
+.speech-bubble::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 20px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-right-color: #f5f5f5;
+}
+
+.comment-box {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 24px;
+  padding-right: 48px;
+  border-radius: 8px;
+  max-width: 700px;
+  margin-top: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.comment-box h2, .comment-box h3 {
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+button {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #111;
+}
+
+.comment {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.comment:last-child {
+  border-bottom: none;
+}
+
+.comment-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin-right: 12px;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.comment-content {
+  flex: 1;
+}
+
+.comment small {
+  color: #777;
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+.playlist {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  background: #f7f9fc;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.track img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+.track-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.track-info .title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.track-info .artist {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
