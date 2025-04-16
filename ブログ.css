@@ -358,6 +358,74 @@ button:hover {
   color: #555;
 }
 
+/* 評価カードのスタイル */
+.song-card {
+  display: flex;
+  background-color: #f7f9fc;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 20px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  max-width: 600px;
+}
+
+.song-jacket {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 16px;
+}
+
+.song-info {
+  flex: 1;
+}
+
+.song-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.song-artist {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 4px 0 12px;
+}
+
+.rating-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.rating-section label {
+  width: 80px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.stars {
+  font-size: 1rem;
+  color: #f5c518; /* 星の色（ゴールド） */
+}
+
+.comment-section {
+  margin-top: 10px;
+}
+
+.comment-section label {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.comment-section p {
+  margin: 4px 0 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
