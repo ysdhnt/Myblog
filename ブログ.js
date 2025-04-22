@@ -77,15 +77,32 @@ function deleteComment(commentId) {
 window.deleteComment = deleteComment;
 window.postComment = postComment;
 
-const likeRef = db.ref(`likes/${articleId}`); // 記事IDごとに保存
+// いいね数取得・表示
+const likeCountSpan = document.getElementById("like-count");
+const likeButton = document.getElementById("like-button");
 
-// ボタン押下時
-document.getElementById("like-btn").addEventListener("click", () => {
-  likeRef.transaction(current => (current || 0) + 1);
+const likeRef = db.ref(`likes/${articleId}`);
+
+likeRef.on("value", (snapshot) => {
+  const count = snapshot.val() || 0;
+  likeCountSpan.textContent = count;
 });
 
-// リアルタイムで反映
-likeRef.on("value", snapshot => {
-  const count = snapshot.val() || 0;
-  document.getElementById("like-count").textContent = count;
+//+1設定
+likeButton.addEventListener("click", () => {
+  likeRef.transaction((currentLikes) => {
+    return (currentLikes || 0) + 1;
+  });
+});
+
+//まとめページ
+const articles = document.querySelectorAll("#article-list [data-id]");
+
+articles.forEach(article => {
+  const id = article.dataset.id;
+  const countSpan = article.querySelector(".like-count");
+
+  db.ref(`likes/${id}`).on("value", snapshot => {
+    countSpan.textContent = snapshot.val() || 0;
+  });
 });
