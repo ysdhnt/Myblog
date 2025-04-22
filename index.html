@@ -34,7 +34,6 @@
             <h2>好きな曲ランキング</h2>
             <p>2025/4/16</p>
             <div class="tag">#趣味</div>
-            <span id="like-count-article1">0</span> 👍
           </div>
          </a>
         </div>
@@ -45,22 +44,18 @@
             <h2>僕って人はこんな人</h2>
             <p>2025/4/14</p>
             <div class="tag">#その他</div>
-            <span id="like-count-article1">0</span> 👍
           </div>
          </a>
         </div>
         <div class="post" data-tag="その他">
-         <div class="article" data-article-id="blog1"></div>
           <a href="初投稿.html?id=blog1">
            <img src="img/デザイン1.jpg" alt="記事画像">
            <div class="post-content">
              <h2>僕とこのブログについて</h2>
              <p>2025/4/14</p>
              <div class="tag">#その他</div>
-             <span class="like-count">0</span> 👍
            </div>
           </a>
-         </div>
         </div>
       </div>
     </main>
@@ -92,20 +87,6 @@
         }
       });
     }
-    const db = firebase.database();
-
-// .article をすべて取得
-const articles = document.querySelectorAll(".article");
-
-articles.forEach((articleElement) => {
-  const articleId = articleElement.dataset.articleId;
-  const likeCountSpan = articleElement.querySelector(".like-count");
-
-  const likeRef = db.ref("likes/" + articleId);
-  likeRef.on("value", (snapshot) => {
-    likeCountSpan.textContent = snapshot.val() || 0;
-  });
-});
   </script>
 
 </body>

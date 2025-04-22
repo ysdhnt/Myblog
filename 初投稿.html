@@ -52,10 +52,6 @@
       </div>
       <h3 class="mini-title" id="section4">最後に</h3>
       <p class="explain">このブログはネット上にたくさんあるブログと比べたらレベルの低いものかもしれません。それでも僕は自分の成長のためにこれから頑張っていこうと思っています。<br>　<br>ですが、成長のためには多くの人から声をいただき、それを糧とする必要もあるとも思っています。何か改善点などがあれば是非ブログ下部にあるコメント欄にどしどしアドバイスを何卒よろしくお願いします（コメントの削除はシステムと技術力の関係上僕しか消せないのでコメントで言ってください）。</p>
-      <div class="like-container">
-        <button id="like-button">👍</button>
-        <span id="like-count">0</span>
-      </div>
       <div class="comment-box">
         <h2>コメントを書く</h2>
         <input type="text" id="username" placeholder="名前を入力" />
@@ -88,23 +84,5 @@
      const firebaseConfig = {
        // あなたの Firebase 設定
      };
-     const app = initializeApp(firebaseConfig);
-     const db = firebase.database();
-
-     // URLのクエリパラメータから ?id=○○ を取得
-     const urlParams = new URLSearchParams(window.location.search);
-     const articleId = urlParams.get("blog1"); // blog1 とか
-
-     if (articleId) {
-       const likeRef = db.ref("likes/" + articleId);
-
-       likeRef.on("value", (snapshot) => {
-         document.getElementById("like-count").textContent = snapshot.val() || 0;
-       });
-
-       document.getElementById("like-button").addEventListener("click", () => {
-         likeRef.transaction((current) => (current || 0) + 1);
-       });
-     }
   </script>
 </body>
