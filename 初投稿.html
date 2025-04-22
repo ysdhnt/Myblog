@@ -53,7 +53,7 @@
       <h3 class="mini-title" id="section4">最後に</h3>
       <p class="explain">このブログはネット上にたくさんあるブログと比べたらレベルの低いものかもしれません。それでも僕は自分の成長のためにこれから頑張っていこうと思っています。<br>　<br>ですが、成長のためには多くの人から声をいただき、それを糧とする必要もあるとも思っています。何か改善点などがあれば是非ブログ下部にあるコメント欄にどしどしアドバイスを何卒よろしくお願いします（コメントの削除はシステムと技術力の関係上僕しか消せないのでコメントで言ってください）。</p>
       <div class="like-container">
-        <button id="like-button" class="like-button">👍</button>
+        <button id="like-button">👍</button>
         <span id="like-count">0</span>
       </div>
       <div class="comment-box">
@@ -89,5 +89,17 @@
        // あなたの Firebase 設定
      };
      const app = initializeApp(firebaseConfig);
+     const db = firebase.database();
+     const likeRef = db.ref("likes/article1");
+
+        // いいね数を表示（リアルタイム更新）
+     likeRef.on("value", (snapshot) => {
+       document.getElementById("like-count").textContent = snapshot.val() || 0;
+     });
+
+     // いいねを押したら +1
+     document.getElementById("like-button").addEventListener("click", () => {
+       likeRef.transaction((current) => (current || 0) + 1);
+     });
   </script>
 </body>

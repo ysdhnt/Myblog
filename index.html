@@ -34,8 +34,8 @@
             <h2>好きな曲ランキング</h2>
             <p>2025/4/16</p>
             <div class="tag">#趣味</div>
+            <span id="like-count-article1">0</span> 👍
           </div>
-          ❤️ <span class="like-count">0</span>
          </a>
         </div>
         <div class="post" data-tag="その他">
@@ -45,8 +45,8 @@
             <h2>僕って人はこんな人</h2>
             <p>2025/4/14</p>
             <div class="tag">#その他</div>
+            <span id="like-count-article1">0</span> 👍
           </div>
-          ❤️ <span class="like-count">0</span>
          </a>
         </div>
         <div class="post" data-tag="その他">
@@ -56,8 +56,8 @@
             <h2>僕とこのブログについて</h2>
             <p>2025/4/14</p>
             <div class="tag">#その他</div>
+            <span id="like-count-article1">0</span> 👍
           </div>
-          ❤️ <span class="like-count">0</span>
          </a>
         </div>
       </div>
@@ -90,6 +90,13 @@
         }
       });
     }
+    const db = firebase.database();
+    const likeRef = db.ref("likes/article1");
+
+    // いいね数を表示（リアルタイム）
+    likeRef.on("value", (snapshot) => {
+      document.getElementById("like-count-article1").textContent = snapshot.val() || 0;
+    });
   </script>
 
 </body>
