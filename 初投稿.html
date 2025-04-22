@@ -86,11 +86,10 @@
      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
      import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
      const firebaseConfig = {
-       // あなたの Firebase 設定
      };
      const app = initializeApp(firebaseConfig);
      const db = firebase.database();
-     const likeRef = db.ref("likes/article1");
+     const likeRef = db.ref("likes/blog1");
 
         // いいね数を表示（リアルタイム更新）
      likeRef.on("value", (snapshot) => {
