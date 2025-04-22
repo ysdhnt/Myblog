@@ -43,7 +43,7 @@ db.ref(`comments/${articleId}`).on("value", (snapshot) => {
 
     // アイコンのURLを名前で分岐
     const iconUrl = name === myName
-      ? "img/プロフィール用アイコン.png"      // あなた専用アイコン
+      ? "img/プロフィール用アイコン.png"      // 専用アイコン
       : "img/丸アイコン人型.jpeg"; // それ以外の人のアイコン
 
     commentsDiv.innerHTML += `
@@ -58,7 +58,7 @@ db.ref(`comments/${articleId}`).on("value", (snapshot) => {
       </div>`;
   }
 });
-const DELETE_PASSWORD = "hinata200615"; // 自由に変えてOK！
+const DELETE_PASSWORD = "hinata200615"; 
 
 function deleteComment(commentId) {
   const input = prompt("削除パスワードを入力してください:");
@@ -76,3 +76,16 @@ function deleteComment(commentId) {
 }
 window.deleteComment = deleteComment;
 window.postComment = postComment;
+
+const likeRef = db.ref(`likes/${articleId}`); // 記事IDごとに保存
+
+// ボタン押下時
+document.getElementById("like-btn").addEventListener("click", () => {
+  likeRef.transaction(current => (current || 0) + 1);
+});
+
+// リアルタイムで反映
+likeRef.on("value", snapshot => {
+  const count = snapshot.val() || 0;
+  document.getElementById("like-count").textContent = count;
+});
