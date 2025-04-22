@@ -86,19 +86,25 @@
      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
      import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
      const firebaseConfig = {
+       // あなたの Firebase 設定
      };
      const app = initializeApp(firebaseConfig);
      const db = firebase.database();
-     const likeRef = db.ref("likes/blog1");
 
-        // いいね数を表示（リアルタイム更新）
-     likeRef.on("value", (snapshot) => {
-       document.getElementById("like-count").textContent = snapshot.val() || 0;
-     });
+     // URLのクエリパラメータから ?id=○○ を取得
+     const urlParams = new URLSearchParams(window.location.search);
+     const articleId = urlParams.get("blog1"); // blog1 とか
 
-     // いいねを押したら +1
-     document.getElementById("like-button").addEventListener("click", () => {
-       likeRef.transaction((current) => (current || 0) + 1);
-     });
+     if (articleId) {
+       const likeRef = db.ref("likes/" + articleId);
+
+       likeRef.on("value", (snapshot) => {
+         document.getElementById("like-count").textContent = snapshot.val() || 0;
+       });
+
+       document.getElementById("like-button").addEventListener("click", () => {
+         likeRef.transaction((current) => (current || 0) + 1);
+       });
+     }
   </script>
 </body>
