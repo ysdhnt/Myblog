@@ -76,3 +76,14 @@ function deleteComment(commentId) {
 }
 window.deleteComment = deleteComment;
 window.postComment = postComment;
+
+//いいねアニメーション
+document.getElementById("likeBtn").addEventListener("click", () => {
+  const icon = document.getElementById("likeIcon");
+
+  icon.classList.add("thumbs-up");
+  
+  icon.addEventListener("animationend", () => {
+    icon.classList.remove("thumbs-up");
+  }, { once: true });
+});
