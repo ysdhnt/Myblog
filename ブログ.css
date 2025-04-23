@@ -427,7 +427,7 @@ button:hover {
 }
 
 .like-button {
-  background: none;
+  background: white;
   border: none;
   cursor: pointer;
   padding: 0;
