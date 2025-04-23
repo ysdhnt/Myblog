@@ -80,19 +80,6 @@
   </div>
 
   <script type="module">
-    function filterPosts(category) {
-      const posts = document.querySelectorAll('.post');
-
-      posts.forEach(post => {
-        const postCategory = post.getAttribute('data-category');
-
-        if (category === 'all' || postCategory === category) {
-          post.style.display = 'block';
-        } else {
-          post.style.display = 'none';
-        }
-      });
-    }
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
     import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
 
@@ -119,6 +106,22 @@
       });
     });
   </script>
+  <script>
+        function filterPosts(category) {
+      const posts = document.querySelectorAll('.post');
 
+      posts.forEach(post => {
+        const postCategory = post.getAttribute('data-category');
+
+        if (category === 'all' || postCategory === category) {
+          post.style.display = 'block';
+        } else {
+          post.style.display = 'none';
+        }
+      });
+    }
+
+    window.filterPosts = filterPosts;
+  </script>
 </body>
 </html>
