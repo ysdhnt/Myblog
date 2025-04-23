@@ -219,10 +219,43 @@
  <script type="module" src="ブログ.js"></script>
  <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import {
+      getDatabase,
+      ref,
+      onValue,
+      runTransaction
+    } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"; // ←これ追加！
     import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+  
     const firebaseConfig = {
-      // あなたの Firebase 設定
+      apiKey: "AIzaSyA974kQAXG_l3j2EP0wSRs_M-P8BAhjYvk",
+      authDomain: "my-blog-comments-31d2a.firebaseapp.com",
+      projectId: "my-blog-comments-31d2a",
+      storageBucket: "my-blog-comments-31d2a.firebasestorage.app",
+      messagingSenderId: "947054447547",
+      appId: "1:947054447547:web:1a5599ae0e1638c5c7929e",
+      databaseURL: "https://my-blog-comments-31d2a-default-rtdb.asia-southeast1.firebasedatabase.app"
     };
+  
     const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+  
+    const articleId = new URLSearchParams(window.location.search).get("id") || "default";
+    const likeRef = ref(db, `likes/${articleId}`);
+  
+    // いいね数をリアルタイムで更新
+    onValue(likeRef, (snapshot) => {
+      const data = snapshot.val() || 0;
+      document.getElementById("likeCount").textContent = data;
+    });
+  
+    document.getElementById("likeBtn").addEventListener("click", () => {
+      runTransaction(likeRef, (current) => (current || 0) + 1);
+      const icon = document.getElementById("likeIcon");
+      icon.src = "img/いいね画像.png"; // アニメーション画像に一時的に変更
+      setTimeout(() => {
+        icon.src = "img/いいね画像.png"; // 元に戻す
+      }, 800);
+    });
  </script>
 </body>
