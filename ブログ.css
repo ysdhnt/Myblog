@@ -438,7 +438,7 @@ button:hover {
 }
 
 #likeCount {
-  font-color: black;
+  color: black;
 }
 
 #likeIcon {
@@ -459,6 +459,9 @@ button:hover {
   animation: thumbsUp 0.4s ease;
 }
 
+.countnumber{
+  font-color: black;
+}
 
 @media (max-width: 768px) {
   .container {
