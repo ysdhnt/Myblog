@@ -426,6 +426,10 @@ button:hover {
   line-height: 1.5;
 }
 
+#likeBtn {
+  background: white;
+}
+
 .like-button {
   background: white;
   border: none;
