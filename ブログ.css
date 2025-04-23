@@ -438,7 +438,7 @@ button:hover {
 }
 
 #likeCount {
-  font-color: black;
+  font-color: black!important;
 }
 
 #likeIcon {
