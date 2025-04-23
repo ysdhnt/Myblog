@@ -34,6 +34,7 @@
             <h2>好きな曲ランキング</h2>
             <p>2025/4/16</p>
             <div class="tag">#趣味</div>
+            <span id="likes-blog1">0 いいね</span>
           </div>
          </a>
         </div>
@@ -87,6 +88,31 @@
         }
       });
     }
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+    import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyA974kQAXG_l3j2EP0wSRs_M-P8BAhjYvk",
+      authDomain: "my-blog-comments-31d2a.firebaseapp.com",
+      projectId: "my-blog-comments-31d2a",
+      storageBucket: "my-blog-comments-31d2a.firebasestorage.app",
+      messagingSenderId: "947054447547",
+      appId: "1:947054447547:web:1a5599ae0e1638c5c7929e",
+      databaseURL: "https://my-blog-comments-31d2a-default-rtdb.asia-southeast1.firebasedatabase.app"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    const articleIds = ["blog1", "blog2", "blog3"]; // 記事IDをリストで
+
+    articleIds.forEach(id => {
+      const likeRef = ref(db, `likes/${id}`);
+      onValue(likeRef, (snapshot) => {
+        const data = snapshot.val() || 0;
+        document.getElementById(`likes-${id}`).textContent = `${data} いいね`;
+      });
+    });
   </script>
 
 </body>
