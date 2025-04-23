@@ -437,6 +437,10 @@ button:hover {
   padding: 0;
 }
 
+#likeCount {
+  font-color: black;
+}
+
 #likeIcon {
   width: 48px;
   height: 48px;
