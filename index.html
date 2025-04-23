@@ -27,7 +27,7 @@
       </div>
 
       <div class="posts" id="postList">
-        <div class="post" data-tag="趣味">
+        <div class="post" data-category="趣味">
          <a href="好きな曲ランキング.html?id=blog3">
           <img src="img/点描の唄ジャケット.jpg" alt="ブログ画像">
           <div class="post-content">
@@ -38,7 +38,7 @@
           </div>
          </a>
         </div>
-        <div class="post" data-tag="その他">
+        <div class="post" data-category="その他">
          <a href="僕って人はこんな人.html?id=blog2">
           <img src="img/ニュース1.jpeg" alt="ニュース画像">
           <div class="post-content">
@@ -49,7 +49,7 @@
           </div>
          </a>
         </div>
-        <div class="post" data-tag="その他">
+        <div class="post" data-category="その他">
           <a href="初投稿.html?id=blog1">
            <img src="img/デザイン1.jpg" alt="記事画像">
            <div class="post-content">
@@ -80,10 +80,13 @@
   </div>
 
   <script type="module">
-    function filterPosts(tag) {
+    function filterPosts(category) {
       const posts = document.querySelectorAll('.post');
+
       posts.forEach(post => {
-        if (tag === 'すべて' || post.dataset.tag === tag) {
+        const postCategory = post.getAttribute('data-category');
+
+        if (category === 'all' || postCategory === category) {
           post.style.display = 'block';
         } else {
           post.style.display = 'none';
