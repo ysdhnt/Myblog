@@ -199,7 +199,7 @@
     document.getElementById("likeBtn").addEventListener("click", () => {
       runTransaction(likeRef, (current) => (current || 0) + 1);
       const icon = document.getElementById("likeIcon");
-      icon.src = "img/good-animated.gif"; // アニメーション画像に一時的に変更
+      icon.src = "img/いいね画像.png"; // アニメーション画像に一時的に変更
       setTimeout(() => {
         icon.src = "img/いいね画像.png"; // 元に戻す
       }, 800);
