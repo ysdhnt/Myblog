@@ -81,8 +81,10 @@ window.postComment = postComment;
 document.getElementById("likeBtn").addEventListener("click", () => {
   const icon = document.getElementById("likeIcon");
 
+  // アニメーション用クラスを追加
   icon.classList.add("thumbs-up");
-  
+
+  // アニメーション終了後にクラスを削除
   icon.addEventListener("animationend", () => {
     icon.classList.remove("thumbs-up");
   }, { once: true });
