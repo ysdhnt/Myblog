@@ -7,11 +7,11 @@
   <link rel="stylesheet" href="ブログ.css">
   <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
-  <link rel="icon" type="image/png" href="img/ファビコン丸形.png">
+  <link rel="icon" type="image/png" href="/img/ファビコン丸形.png">
 </head>
 <body>
   <header>
-    <img src="img/ホームアイコン.png" width="200px" height="70px"></a>
+    <img src="/img/ホームアイコン.png" width="200px" height="70px"></a>
     <nav class="navigation">
         <h3><a href="index.html">Home</a></h3>
         <h3>About</h3>
@@ -34,12 +34,12 @@
       <h3 class="mini-title" id="section1">どんな風にランキング付けするのか</h3>
       <p class="explain">採点基準はいたって単純で、自分がよく聞いている曲とその回数、理由等を考慮して、総合的に判断していきます。</p>
       <div class="profile-comment">
-        <img src="img/プロフィール用アイコン.png" alt="プロフィールアイコン" class="profile-icon">
+        <img src="/img/プロフィール用アイコン2.png" alt="プロフィールアイコン" class="profile-icon">
         <div class="speech-bubble">メロディ、歌詞、雰囲気を5段階評価し、感想や理由も言っていきます。</div>
       </div>
       <h3 class="mini-title" id="section2">3位</h3>
       <div class="song-card">
-        <img src="img/Soranjiジャケット.jpeg" alt="ジャケット画像" class="song-jacket">
+        <img src="/img/Soranjiジャケット.jpeg" alt="ジャケット画像" class="song-jacket">
         <div class="song-info">
           <h3 class="song-title">Soranji</h3>
           <p class="song-artist">Mrs. GREEN APPLE</p>
@@ -67,12 +67,12 @@
         </div>
       </div>
       <div class="profile-comment">
-        <img src="img/プロフィール用アイコン.png" alt="プロフィールアイコン" class="profile-icon">
+        <img src="/img/プロフィール用アイコン2.png" alt="プロフィールアイコン" class="profile-icon">
         <div class="speech-bubble">絶対1回は聞いてほしいなぁ。</div>
       </div>
       <h3 class="mini-title" id="section3">2位</h3>
       <div class="song-card">
-        <img src="img/青のすみかジャケット.jpg" alt="ジャケット画像" class="song-jacket">
+        <img src="/img/青のすみかジャケット.jpg" alt="ジャケット画像" class="song-jacket">
         <div class="song-info">
           <h3 class="song-title">青のすみか</h3>
           <p class="song-artist">キタニタツヤ</p>
@@ -99,12 +99,12 @@
         </div>
       </div>
       <div class="profile-comment">
-        <img src="img/プロフィール用アイコン.png" alt="プロフィールアイコン" class="profile-icon">
+        <img src="/img/プロフィール用アイコン2.png" alt="プロフィールアイコン" class="profile-icon">
         <div class="speech-bubble">呪術廻戦を見た後だとこの曲の歌詞の意味が大きく変わるのでおすすめです。</div>
       </div>
       <h3 class="mini-title" id="section4">1位</h3>
       <div class="song-card">
-        <img src="img/点描の唄ジャケット.jpg" alt="ジャケット画像" class="song-jacket">
+        <img src="/img/点描の唄ジャケット.jpg" alt="ジャケット画像" class="song-jacket">
         <div class="song-info">
           <h3 class="song-title">点描の唄</h3>
           <p class="song-artist">Mrs. GREEN APPLE</p>
@@ -131,11 +131,11 @@
         </div>
       </div>
       <div class="profile-comment">
-        <img src="img/プロフィール用アイコン.png" alt="プロフィールアイコン" class="profile-icon">
+        <img src="/img/プロフィール用アイコン2.png" alt="プロフィールアイコン" class="profile-icon">
         <div class="speech-bubble">今後この曲を超える曲に出会うことはあるのだろうか…。</div>
       </div>
       <button id="likeBtn">
-        <img src="img/いいね画像.png" id="likeIcon" width="30" />
+        <img src="/img/いいね画像.png" id="likeIcon" width="30" />
         <span id="likeCount">0</span>
       </button>
       <div class="comment-box">
@@ -150,7 +150,7 @@
        <aside>
          <h3>プロフィール</h3>
          <div class="picture">
-          <img src="img/プロフィール用アイコン.png" width="100px" height="100px"></a>
+          <img src="/img/プロフィール用アイコン2.png" width="100px" height="100px"></a>
           <p class="name">マイルドマインド</p>
          </div>
          <p>こんにちは！UI/UXデザインの練習中の大学1年生です。日常や気になったニュース、好きなものなど、じゃんじゃん記事にしていきます！</p>
@@ -199,9 +199,9 @@
     document.getElementById("likeBtn").addEventListener("click", () => {
       runTransaction(likeRef, (current) => (current || 0) + 1);
       const icon = document.getElementById("likeIcon");
-      icon.src = "img/いいね画像.png"; // アニメーション画像に一時的に変更
+      icon.src = "/img/いいね画像.png"; // アニメーション画像に一時的に変更
       setTimeout(() => {
-        icon.src = "img/いいね画像.png"; // 元に戻す
+        icon.src = "/img/いいね画像.png"; // 元に戻す
       }, 800);
     });
   </script>  
