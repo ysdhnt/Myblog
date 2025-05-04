@@ -43,8 +43,8 @@ db.ref(`comments/${articleId}`).on("value", (snapshot) => {
 
     // アイコンのURLを名前で分岐
     const iconUrl = name === myName
-      ? "img/プロフィール用アイコン.png"      // 専用アイコン
-      : "img/丸アイコン人型.jpeg"; // それ以外の人のアイコン
+      ? "/img/プロフィール用アイコン2.png"      // 専用アイコン
+      : "/img/丸アイコン人型.jpeg"; // それ以外の人のアイコン
 
     commentsDiv.innerHTML += `
       <div class="comment">
