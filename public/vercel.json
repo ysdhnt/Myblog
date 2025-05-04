@@ -1,0 +1,14 @@
+{
+    "headers": [
+      {
+        "source": "/0.5servingjournalsitemap.xml",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/xml"
+          }
+        ]
+      }
+    ]
+  }
+  
