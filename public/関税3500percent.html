@@ -7,11 +7,11 @@
   <link rel="stylesheet" href="ブログ.css">
   <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
-  <link rel="icon" type="image/png" href="img/ファビコン丸形.png">
+  <link rel="icon" type="image/png" href="/img/ファビコン丸形.png">
 </head>
 <body>
   <header>
-    <img src="img/ホームアイコン.png" width="200px" height="70px"></a>
+    <img src="/img/ホームアイコン.png" width="200px" height="70px"></a>
     <nav class="navigation">
         <h3><a href="index.html">Home</a></h3>
         <h3>About</h3>
@@ -33,18 +33,18 @@
       </div>
       <h3 class="mini-title" id="section1">概要</h3>
       <p class="explain">2025年1月に大統領に就任したトランプ大統領は次々と関税政策を打ち出しています。<br>　<br>特にトランプ政権は中国を狙い撃ちにしており、世界のどの国よりも高い関税をかけています。</p>
-      <img src="img/トランプ関税.jpg" width="500px" height="350px"></a>
+      <img src="/img/トランプ関税.jpeg" width="500px" height="350px"></a>
       <p class="explain">また、これら個別の国に対しての関税に加え、トランプ政権は相互関税というものを政策として打ち出しています。この相互関税導入に世界は驚愕し、株式・為替・仮想通貨といった市場は混乱に陥り、日本の株式市場は前日比12%安という超悲観相場になりました。<br>　<br>現在では一定の落ち着きを取り戻しましたが、依然として恐怖指数は高く今後も不安定な相場が続くと予想されています。</p>
       <h3 class="mini-title" id="section2">どんな関税があるのか</h3>
       <p class="explain">それではこの関税について具体的に掘り下げていきましょう。<br>　<br>2月1日にはカナダ・メキシコからの輸入品に対して一律25%の関税、1か月の猶予の後3月4日に実施されています。中国からの輸入品に対しても、2月1日から10%、3月4日から20%の追加関税が課されています。また、3月4日にはすべての国からの鉄鋼・アルミニウム関連輸入品に対して25%の関税を課しました。<br>　<br>また、4月21日にアメリカ政府は東南アジアから輸入する大半の太陽電池（ソーラーパネル）について、3500%以上に及ぶ高率な関税を課すことを決定しています。<br>　<br>国によって差はありますが、このうち、マレーシアから輸入される中国企業、晶科能源（ジンコソーラー）製品への関税率は４１．５６％と最低水準です。一方、タイから輸入される中国・天合光能（トリナ・ソーラー）の製品には３７５．１９％の関税が課されます。<br>　<br>米国の調査に協力しなかったカンボジアのメーカーには3500%超の関税を課すそうです。</p>
       <div class="profile-comment">
-        <img src="img/プロフィール用アイコン.png" alt="プロフィールアイコン" class="profile-icon">
+        <img src="/img/プロフィール用アイコン2.png" alt="プロフィールアイコン" class="profile-icon">
         <div class="speech-bubble">3500%の関税ってもうお笑いですね。</div>
       </div>
       <h3 class="mini-title" id="section2">最後に</h3>
       <p class="explain">関税政策は自国の産業を守るという観点から、保護主義的な意味合いを持ち、トランプ大統領の関税政策は昨今推し進められてきたグローバル化に逆行するものです。逆行を否定するわけではありませんがここまで大胆な政策になり、貿易戦争が激化すると、交際協調の破綻、ナショナリズムの助長、果ては戦争へと突き進んで行ってしまうという識者も少なくありません。<br>　<br>またこれは国家間での争いごとになるだけでなく、国民生活にも多大な影響を及ぼします。例えば企業の輸入コスト増加で消費者価格へ転嫁されることによるインフレの促進、またFRBがインフレに対して利上げをすることで景気減速、もしくは景気後退も起こりえます。その結果インフレと景気後退が同時に起こるスタグフレーションという事態にもなりかねます。<br>　<br>ただ、結果が現れていない以上失敗とも成功とも言えません。今後の出方次第で世界は大きく変わっていくので注視していく必要が大いにあります。</p>
       <button id="likeBtn">
-        <img src="img/いいね画像.png" id="likeIcon" width="30" />
+        <img src="/img/いいね画像.png" id="likeIcon" width="30" />
         <span id="likeCount">0</span>
       </button>
       <div class="comment-box">
@@ -59,7 +59,7 @@
        <aside>
          <h3>プロフィール</h3>
          <div class="picture">
-          <img src="img/プロフィール用アイコン.png" width="100px" height="100px"></a>
+          <img src="/img/プロフィール用アイコン2.png" width="100px" height="100px"></a>
           <p class="name">マイルドマインド</p>
          </div>
          <p>こんにちは！UI/UXデザインの練習中の大学1年生です。日常や気になったニュース、好きなものなど、じゃんじゃん記事にしていきます！</p>
@@ -108,9 +108,9 @@
     document.getElementById("likeBtn").addEventListener("click", () => {
       runTransaction(likeRef, (current) => (current || 0) + 1);
       const icon = document.getElementById("likeIcon");
-      icon.src = "img/いいね画像.png"; // アニメーション画像に一時的に変更
+      icon.src = "/img/いいね画像.png"; // アニメーション画像に一時的に変更
       setTimeout(() => {
-        icon.src = "img/いいね画像.png"; // 元に戻す
+        icon.src = "/img/いいね画像.png"; // 元に戻す
       }, 800);
     });
   </script>  
