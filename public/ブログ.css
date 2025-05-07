@@ -43,6 +43,14 @@ header h1 {
   margin-right: 30px;
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 .container {
   display: flex;
   padding: 2rem;
@@ -472,5 +480,24 @@ button:hover {
 
   aside {
     margin-top: 20px;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 100;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 }
