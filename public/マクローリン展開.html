@@ -3,20 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>トランプ関税の解説</title>
+  <title>感動数学その1</title>
   <link rel="stylesheet" href="ブログ.css">
   <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <link rel="icon" type="image/png" href="/img/favicon2.png">
 </head>
 <body>
   <header>
     <img src="/img/ホームアイコン.png" width="200px" height="70px"></a>
-    <nav class="navigation">
-        <h3><a href="index.html">Home</a></h3>
-        <h3>About</h3>
-        <h3>Contact</h3>
-    </nav>
+    <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+        <button class="menu-toggle" id="menuToggle">
+          ☰
+        </button>
+      </nav>
   </header>
   <div class="container">
    <main>
@@ -34,6 +41,37 @@
       <h3 class="mini-title" id="section1">概要</h3>
       <p class="explain">2025年1月に大統領に就任したトランプ大統領は次々と関税政策を打ち出しています。<br>　<br>特にトランプ政権は中国を狙い撃ちにしており、世界のどの国よりも高い関税をかけています。</p>
       <img src="/img/トランプ関税.jpeg" width="500px" height="350px"></a>
+      <p>マクローリン展開の定義：</p>
+$$
+f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!} x^n
+$$
+
+<!-- e^x -->
+<p>指数関数 e^x のマクローリン展開：</p>
+$$
+e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots
+$$
+
+<!-- sin x -->
+<p>正弦関数 sin(x) のマクローリン展開：</p>
+$$
+\sin x = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{(2n+1)!}
+= x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots
+$$
+
+<!-- cos x -->
+<p>余弦関数 cos(x) のマクローリン展開：</p>
+$$
+\cos x = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n}}{(2n)!}
+= 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \cdots
+$$
+
+<!-- e^(ix) -->
+<p>複素指数関数 e^{ix} のマクローリン展開：</p>
+$$
+e^{ix} = \sum_{n=0}^{\infty} \frac{(ix)^n}{n!}
+= 1 + ix - \frac{x^2}{2!} - i\frac{x^3}{3!} + \frac{x^4}{4!} + \cdots
+$$
       <p class="explain">また、これら個別の国に対しての関税に加え、トランプ政権は相互関税というものを政策として打ち出しています。この相互関税導入に世界は驚愕し、株式・為替・仮想通貨といった市場は混乱に陥り、日本の株式市場は前日比12%安という超悲観相場になりました。<br>　<br>現在では一定の落ち着きを取り戻しましたが、依然として恐怖指数は高く今後も不安定な相場が続くと予想されています。</p>
       <h3 class="mini-title" id="section2">どんな関税があるのか</h3>
       <p class="explain">それではこの関税について具体的に掘り下げていきましょう。<br>　<br>2月1日にはカナダ・メキシコからの輸入品に対して一律25%の関税、1か月の猶予の後3月4日に実施されています。中国からの輸入品に対しても、2月1日から10%、3月4日から20%の追加関税が課されています。また、3月4日にはすべての国からの鉄鋼・アルミニウム関連輸入品に対して25%の関税を課しました。<br>　<br>また、4月21日にアメリカ政府は東南アジアから輸入する大半の太陽電池（ソーラーパネル）について、3500%以上に及ぶ高率な関税を課すことを決定しています。<br>　<br>国によって差はありますが、このうち、マレーシアから輸入される中国企業、晶科能源（ジンコソーラー）製品への関税率は４１．５６％と最低水準です。一方、タイから輸入される中国・天合光能（トリナ・ソーラー）の製品には３７５．１９％の関税が課されます。<br>　<br>米国の調査に協力しなかったカンボジアのメーカーには3500%超の関税を課すそうです。</p>
