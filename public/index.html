@@ -29,7 +29,7 @@
 
       <div class="posts" id="postList">
         <div class="post" data-category="その他">
-          <a href="関税3500percent.html?id=blog4">
+          <a href="関税3500percent.html?id=blog8">
            <img src="/img/トランプ関税.jpeg" alt="ブログ画像">
            <div class="post-content">
              <h2>トランプ関税の解説</h2>
@@ -40,7 +40,7 @@
           </a>
          </div>
         <div class="post" data-category="趣味">
-         <a href="好きな曲ランキング.html?id=blog3">
+         <a href="好きな曲ランキング.html?id=blog7">
           <img src="/img/点描の唄ジャケット.jpg" alt="ブログ画像">
           <div class="post-content">
             <h2>好きな曲ランキング</h2>
@@ -51,7 +51,7 @@
          </a>
         </div>
         <div class="post" data-category="その他">
-         <a href="僕って人はこんな人.html?id=blog2">
+         <a href="僕って人はこんな人.html?id=blog6">
           <img src="/img/ニュース1.jpeg" alt="ニュース画像">
           <div class="post-content">
             <h2>僕って人はこんな人</h2>
@@ -62,7 +62,7 @@
          </a>
         </div>
         <div class="post" data-category="その他">
-          <a href="初投稿.html?id=blog1">
+          <a href="初投稿.html?id=blog5">
            <img src="/img/デザイン1.jpg" alt="記事画像">
            <div class="post-content">
              <h2>僕とこのブログについて</h2>
@@ -108,7 +108,7 @@
     const app = initializeApp(firebaseConfig);
     const db = getDatabase(app);
 
-    const articleIds = ["blog1", "blog2", "blog3", "blog4"]; // 記事IDをリストで
+    const articleIds = ["blog5", "blog6", "blog7", "blog8"]; // 記事IDをリストで
 
     articleIds.forEach(id => {
       const likeRef = ref(db, `likes/${id}`);
