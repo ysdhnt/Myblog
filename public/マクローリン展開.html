@@ -28,23 +28,36 @@
   <div class="container">
    <main>
     <div class="main1">
-      <h1 class="title">トランプ関税の解説</h1>
+      <h1 class="title">感動数学その1</h1>
       <div class="toc-001">
           <div>目次</div>
           <ol>
-            <li><a href="#section1">概要</a></li>
-            <li><a href="#section2">そもそもなんで関税かけるの？</a></li>
-            <li><a href="#section3">どんな関税があるのか</a></li>
-            <li><a href="#section4">最後に</a></li>
+            <li><a href="#section1">世界一美しい等式</a></li>
+            <li><a href="#section2">等式を導出していこう</a></li>
+            <li><a href="#section3">最後に</a></li>
           </ol>
       </div>
-      <h3 class="mini-title" id="section1">概要</h3>
-      <p class="explain">2025年1月に大統領に就任したトランプ大統領は次々と関税政策を打ち出しています。<br>　<br>特にトランプ政権は中国を狙い撃ちにしており、世界のどの国よりも高い関税をかけています。</p>
-      <img src="/img/トランプ関税.jpeg" width="500px" height="350px"></a>
-      <p>マクローリン展開の定義：</p>
-$$
-f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!} x^n
-$$
+      <h3 class="mini-title" id="section1">世界一美しい等式</h3>
+      <p class="explain">このタイトルを見て、ピンと来る方は一定数いるかと思います。私は高校の授業の時に一度だけ聞いた記憶があります。その世界一美しい等式というのがこちら。<br>　<br></p>
+      $$ e^{iπ} + 1 = 0 $$
+      <p class="explain">　<br>今回の記事はこの世界一美しい等式の導出をしていこうと思います。</p>
+      <div class="profile-comment">
+        <img src="/img/プロフィール用アイコン2.png" alt="プロフィールアイコン" class="profile-icon">
+        <div class="speech-bubble">途中数Ⅲの知識が要求されるところがありますが後で解説ページみたいなのを作る予定です。</div>
+      </div>
+      <h3 class="mini-title" id="section1">等式を導出していこう</h3>
+      <p class="explain">まずは</p>
+      $$ e^x 　 sinx 　 cosx $$
+      <p class="explain">
+        の3つの式をマクローリン展開していきます。<br>　<br>
+        「いやまずマクローリン展開ってなんだよ」って方に説明させてもらいます。<br>
+        数学の世界には「関数を近似（十分に小さい値を無視する、身近な言葉でいえば四捨五入に近いことを）する方法」がいくつかありますが、その中でもよく使われるのが「マクローリン展開」です。難しそうに聞こえるかもしれませんが、これは関数を「無限に長い足し算（級数）」の形に書き換える方法です。<br>
+        そのマクローリン展開の定義式は次のようになります。
+      </p>
+      $$ f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!} x^n $$
+      <p class="explain">
+        一見何が書いてあるかわからない式になっていますが一つずつ紐解いていきましょう。
+      </p>
 
 <!-- e^x -->
 <p>指数関数 e^x のマクローリン展開：</p>
