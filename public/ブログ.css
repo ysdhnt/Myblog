@@ -68,6 +68,27 @@ main {
   margin-right: 32px;
 }
 
+.exp-ul{
+  list-style:  none;  
+  margin:  0;      
+  padding: 0; 
+  counter-reset: li_count; 
+}
+
+.exp-li{
+  height: 50px;
+  display: flex;
+  align-items: center; 
+  margin-left: 20px;
+}
+
+.exp-li::before{
+  counter-increment: li_count;
+  content: counter(li_count)".";
+  color: black;
+  margin-right: 5px;
+}
+
 .toc-001 {
     margin-bottom: 30px;
     padding: 1em 1em 1em 2em;
