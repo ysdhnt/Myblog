@@ -18,9 +18,16 @@
         <li><a href="/about.html">About</a></li>
         <li><a href="/contact.html">Contact</a></li>
       </ul>
-      <button class="menu-toggle" id="menuToggle">
-        ☰
-      </button>
+      <div id="menuIcon" class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav id="navMenu" class="nav-menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
   </header>
   <div class="container">
    <main>
@@ -261,11 +268,12 @@
         icon.src = "/img/いいね画像.png"; // 元に戻す
       }, 800);
     });
-    const toggleButton = document.getElementById('menuToggle');
-    const navLinks = document.querySelector('.nav-links');
+    const menuIcon = document.getElementById("menuIcon");
+    const navMenu = document.getElementById("navMenu");
 
-    toggleButton.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+    menuIcon.addEventListener("click", () => {
+      menuIcon.classList.toggle("open");
+      navMenu.classList.toggle("active");
     });
  </script>
 </body>
