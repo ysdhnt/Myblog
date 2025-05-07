@@ -208,5 +208,11 @@
         icon.src = "/img/いいね画像.png"; // 元に戻す
       }, 800);
     });
+    const toggleButton = document.getElementById('menuToggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    toggleButton.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
   </script>  
 </body>
