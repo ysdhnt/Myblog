@@ -6,7 +6,12 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family:
+  'Noto Sans JP',
+  'Hiragino Sans',
+  'Yu Gothic UI',
+  'Meiryo',
+  sans-serif;
   background-color: white;
   color: #333;
   box-sizing: border-box
