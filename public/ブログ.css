@@ -490,16 +490,39 @@ button:hover {
 @media screen and (max-width: 768px) {
   .container {
     flex-direction: column;
-    padding: 10px;
   }
 
-  main, aside {
-    flex: unset;
-    width: 100%;
+  .posts {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .post {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+
+  .post img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: 1rem;
+  }
+
+  .post-content {
+    flex: 1;
   }
 
   aside {
-    margin-top: 20px;
+    order: 2; /* 最後に表示 */
+    margin-top: 2rem;
   }
 
   .nav{
