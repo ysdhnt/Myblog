@@ -493,7 +493,7 @@ button:hover {
   }
 
   .posts {
-    /*display: flex;*/
+    display: flex;
     flex-direction: column;
     gap: 1.2rem;
   }
@@ -515,8 +515,25 @@ button:hover {
     border-radius: 6px;
     margin-right: 1rem;
   }
-
+  
+  .post-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .post-link img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 1rem;
+  }
+  
   .post-content {
+    display: flex;
+    flex-direction: column;
     flex: 1;
   }
 
