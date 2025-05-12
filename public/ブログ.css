@@ -493,7 +493,7 @@ button:hover {
   }
 
   .posts {
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
     gap: 1.2rem;
   }
