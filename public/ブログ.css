@@ -6,12 +6,7 @@ html {
 
 body {
   margin: 0;
-  font-family:
-  'M PLUS Rounded 1c',
-  'Hiragino Sans',
-  'Yu Gothic UI',
-  'Meiryo',
-  sans-serif;
+  font-family: "BIZ UDゴシック", "Yu Gothic UI", sans-serif;
   background-color: white;
   color: #333;
   box-sizing: border-box
@@ -215,7 +210,6 @@ aside ul{
 .post-content h2 {
   font-size: 1rem;
   margin: 0 0 0.5rem;
-  font-weight: 400;
 }
 
 .post-content .tag {
