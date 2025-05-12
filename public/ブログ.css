@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+  font-family: 'Noto Sans JP', sans-serif;
   background-color: white;
   color: #333;
   box-sizing: border-box
