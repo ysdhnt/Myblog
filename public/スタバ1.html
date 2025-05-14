@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>感動数学その1</title>
+  <link rel="stylesheet" href="ブログ.css">
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="icon" type="image/png" href="/img/favicon2.png">
+</head>
+<body>
+  <header>
+    <img src="/img/ホームアイコン.png" width="200px" height="70px"></a>
+    <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div id="menuIcon" class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+    </div>
+    <nav id="navMenu" class="nav-menu">
+          <a href="/">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+    </nav>
+  </header>
+  <div class="container">
+   <main>
+    <div class="main1">
+      <h1 class="title">マンゴーパッションティーを飲んだよ</h1>
+      <div class="toc-001">
+          <div>目次</div>
+          <ol>
+            <li><a href="#section1">1年半ぶりにスタバに行ったよ</a></li>
+            <li><a href="#section2"></a></li>
+          </ol>
+      </div>
+      <h3 class="mini-title" id="section1">1年半ぶりにスタバに行ったよ</h3>
+      <p class="explain"></p>
+      <button id="likeBtn">
+        <img src="/img/いいね画像.png" id="likeIcon" width="30" />
+        <span id="likeCount">0</span>
+      </button>
+      <div class="comment-box">
+        <h2>コメントを書く</h2>
+        <input type="text" id="username" placeholder="名前を入力" />
+        <textarea id="message" placeholder="コメントを入力"></textarea>
+        <button onclick="postComment()">送信</button>
+      <h3>みんなのコメント（投稿順）</h3>
+      <div id="comments"></div>
+      </div>
+   </main>
+       <aside>
+         <h3>プロフィール</h3>
+         <div class="picture">
+          <img src="/img/プロフィール用アイコン2.png" width="100px" height="100px"></a>
+          <p class="name">マイルドマインド</p>
+         </div>
+         <p>こんにちは！UI/UXデザインの練習中の大学1年生です。日常や気になったニュース、好きなものなど、じゃんじゃん記事にしていきます！</p>
+         <h3>人気記事</h3>
+         <ul>
+           <li>今後追加予定</li>
+           <li>今後追加予定</li>
+           <li>今後追加予定</li>
+         </ul>
+       </aside>
+      </div>
+  </div>
+  <script type="module" src="ブログ.js"></script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import {
+      getDatabase,
+      ref,
+      onValue,
+      runTransaction
+    } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"; // ←これ追加！
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+  
+    const firebaseConfig = {
+      apiKey: "AIzaSyA974kQAXG_l3j2EP0wSRs_M-P8BAhjYvk",
+      authDomain: "my-blog-comments-31d2a.firebaseapp.com",
+      projectId: "my-blog-comments-31d2a",
+      storageBucket: "my-blog-comments-31d2a.firebasestorage.app",
+      messagingSenderId: "947054447547",
+      appId: "1:947054447547:web:1a5599ae0e1638c5c7929e",
+      databaseURL: "https://my-blog-comments-31d2a-default-rtdb.asia-southeast1.firebasedatabase.app"
+    };
+  
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+  
+    const articleId = new URLSearchParams(window.location.search).get("id") || "default";
+    const likeRef = ref(db, `likes/${articleId}`);
+  
+    // いいね数をリアルタイムで更新
+    onValue(likeRef, (snapshot) => {
+      const data = snapshot.val() || 0;
+      document.getElementById("likeCount").textContent = data;
+    });
+  
+    document.getElementById("likeBtn").addEventListener("click", () => {
+      runTransaction(likeRef, (current) => (current || 0) + 1);
+      const icon = document.getElementById("likeIcon");
+      icon.src = "/img/いいね画像.png"; // アニメーション画像に一時的に変更
+      setTimeout(() => {
+        icon.src = "/img/いいね画像.png"; // 元に戻す
+      }, 800);
+    });
+  </script>  
+  <script>
+    const menuIcon = document.getElementById("menuIcon");
+    const navMenu = document.getElementById("navMenu");
+
+    menuIcon.addEventListener("click", () => {
+      menuIcon.classList.toggle("open");
+      navMenu.classList.toggle("active");
+    });
+  </script>
+</body>
